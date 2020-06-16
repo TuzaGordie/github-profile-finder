@@ -1,0 +1,37 @@
+.label {
+  padding: .5rem .8rem;
+  margin-right: .3rem;
+  height: 3rem;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.light-blue {
+  background-color: lightblue;
+}
+
+.socials {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .socials {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .button-primary-trans {
+    width: 100%;
+    text-align: center;
+  }
+}

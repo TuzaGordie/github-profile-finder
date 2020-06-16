@@ -1,0 +1,99 @@
+<div class="full-wrapper">
+  <!-- Mainmenu-Area-Start -->
+  <div class="mainmenu-area" data-offset-top="50">
+    <div class="container">
+      <div class="navbar-row">
+        <!-- Primary-Menu-Start -->
+        <form class="contact-form" id="contact-form">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-box">
+                <input type="text" name="form-name" id="form-name" class="input-box"
+                       placeholder="Search by github username">
+                <label for="form-name" class="icon lb-name"><i class="fal fa-user"></i></label>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- Primary-Menu-End -->
+      </div>
+    </div>
+  </div>
+  <!-- Mainmenu-Area-End -->
+  <!-- About-Area-Start -->
+  <section class="about-area section-padding-top" *ngIf="profile">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6">
+          <figure class="about-image">
+            <img src="{{profile.avatar_url}}" alt="" class="wow fadeInUp" data-wow-delay="0.3s">
+          </figure>
+        </div>
+        <div class="col-lg-6">
+          <div class="about-text">
+            <h3 class="title wow fadeInUp" data-wow-delay="0.3s">Bio</h3>
+            <div class="sub-title wow fadeInUp" data-wow-delay="0.4s">
+              <h5 class=""><a href="javascript:void(0)">{{profile.name}} <small>({{profile.login}})</small> </a></h5>
+              <p><span *ngIf="profile.company">Works at {{profile.company}}</span> {{profile.location}}</p>
+            </div>
+            <div class="desc wow fadeInUp" data-wow-delay="0.4s" *ngIf="profile.bio">
+              <p>{{profile.bio}}</p>
+            </div>
+            <div class="desc wow fadeInUp" data-wow-delay="0.4s" *ngIf="profile.hireable">
+              <p> Available for hire.</p>
+            </div>
+            <div class="desc wow fadeInUp" data-wow-delay="0.4s" *ngIf="profile.email">
+              <a href="emailto:{{profile.blog}}" target="_blank">{{profile.blog}}</a>
+            </div>
+            <div class="desc wow fadeInUp" data-wow-delay="0.4s" *ngIf="profile.blog">
+              <a href="{{profile.blog}}">{{profile.blog}}</a>
+            </div>
+            <div class="desc socials">
+              <p class="label gray"><strong>{{profile.followers}} Following</strong></p>
+              <p class="label blue"><strong>{{profile.followers}} Followers</strong></p>
+              <p class="label green"><strong>{{profile.public_gists}} Public gist</strong></p>
+              <p class="label light-blue"><strong>{{profile.public_repos}} Public repo</strong></p>
+            </div>
+            <a href="{{profile.html_url}}" target="_blank" class="button-primary-trans mouse-dir wow fadeInUp"
+               data-wow-delay="0.5s">
+              <span class="icon"><i class="fal fa-link"></i></span>
+              <span class="text">View Profile On Github</span>
+              <span class="dir-part"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About-Area-End -->
+
+
+  <!-- Portfolio-Area-Start -->
+  <section class="blog-area section-padding">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3 text-center">
+          <div class="section-title">
+            <h3 class="title">Repositories</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="row repos">
+        <div data-wow-delay="0.3s" class="col-sm-12 col-md-6 col-lg-4 repo text-center mb-4"  *ngFor="let repo of repos">
+          <h5 class="desc"><a href="javascript:void(0)">{{repo.name}}</a></h5>
+          <p class="mb-4">{{repo.description}}</p>
+          <a href="{{repo.html_url}}" class="button-primary-trans col-sm-12 mouse-dir mb-4">View on Github
+            <span class="dir-part"></span>
+            <i class="fal fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Portfolio-Area-End -->
+
+
+</div>
