@@ -15,7 +15,6 @@ export class ProfileService {
   clientSecret: '998ff3911fd8eafe3d344e7d034c4b10a1e86c57';
   constructor(private http: HttpClient) {
     console.log('service is ready!!!');
-    this.username = 'TuzaGordie';
   }
 
   getProfileInfo(): Observable<HttpResponse<any>> {
@@ -28,5 +27,9 @@ export class ProfileService {
     return this.http
       .get<HttpResponse<any>>('https://api.github.com/users/' + this.username + '/repos?client_id=' + this.clientId + '&client_secret' +
         this.clientSecret, {observe: 'response'}).pipe(map((res: any) => res.body));
+  }
+
+  updateProfile(username: string) {
+    this.username = username;
   }
 }

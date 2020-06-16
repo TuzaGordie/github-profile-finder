@@ -9,7 +9,7 @@
             <div class="col-md-12">
               <div class="form-box">
                 <input type="text" name="form-name" id="form-name" class="input-box"
-                       placeholder="Search by github username">
+                       placeholder="Search by github username" [(ngModel)]="username" (keyup)="findProfile()">
                 <label for="form-name" class="icon lb-name"><i class="fal fa-user"></i></label>
               </div>
             </div>
@@ -48,11 +48,11 @@
             <div class="desc wow fadeInUp" data-wow-delay="0.4s" *ngIf="profile.blog">
               <a href="{{profile.blog}}">{{profile.blog}}</a>
             </div>
-            <div class="desc socials">
-              <p class="label gray"><strong>{{profile.followers}} Following</strong></p>
-              <p class="label blue"><strong>{{profile.followers}} Followers</strong></p>
-              <p class="label green"><strong>{{profile.public_gists}} Public gist</strong></p>
-              <p class="label light-blue"><strong>{{profile.public_repos}} Public repo</strong></p>
+            <div class="socials">
+              <p class="label gray"><b>{{profile.followers}} Following</b></p>
+              <p class="label blue"><b>{{profile.followers}} Followers</b></p>
+              <p class="label light-blue"><b>{{profile.public_repos}} Public repo</b></p>
+              <p class="label green"><b>{{profile.public_gists}} Public gist</b></p>
             </div>
             <a href="{{profile.html_url}}" target="_blank" class="button-primary-trans mouse-dir wow fadeInUp"
                data-wow-delay="0.5s">
