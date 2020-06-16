@@ -8,8 +8,8 @@ import {HttpResponse} from '@angular/common/http';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  profile: HttpResponse<any>;
-  repos: HttpResponse<any>;
+  profile: any;
+  repos: any;
 
   constructor(private profileService: ProfileService) {
     this.profileService.getProfileInfo().subscribe(profile => {

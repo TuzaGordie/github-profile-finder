@@ -21,12 +21,12 @@ export class ProfileService {
   getProfileInfo(): Observable<HttpResponse<any>> {
     return this.http
       .get<HttpResponse<any>>('https://api.github.com/users/' + this.username + '?client_id=' + this.clientId + '&client_secret' +
-        this.clientSecret, {observe: 'response'}).pipe(map((res) => res.body));
+        this.clientSecret, {observe: 'response'}).pipe(map((res: any) => res.body));
   }
 
   getProfileRepo(): Observable<HttpResponse<any>> {
     return this.http
       .get<HttpResponse<any>>('https://api.github.com/users/' + this.username + '/repos?client_id=' + this.clientId + '&client_secret' +
-        this.clientSecret, {observe: 'response'}).pipe(map((res) => res.body));
+        this.clientSecret, {observe: 'response'}).pipe(map((res: any) => res.body));
   }
 }
